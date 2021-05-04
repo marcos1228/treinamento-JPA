@@ -25,6 +25,8 @@ public class CadastroDeProduto {
 		celulares = em.merge(celulares);
 		celulares.setNome("123");
 		em.flush();
+		em.remove(celulares);
+		em.flush();
 		
 	}
 
