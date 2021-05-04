@@ -19,10 +19,12 @@ public class CadastroDeProduto {
 
 		em.getTransaction().begin();
 		em.persist(celulares);
-		celulares.setNome("novo");
-		em.getTransaction().commit();
-		em.close();
+		celulares.setNome("XPTO");
+		em.flush();
+		em.clear();
+		celulares = em.merge(celulares);
 		celulares.setNome("123");
+		em.flush();
 		
 	}
 
